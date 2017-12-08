@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="icon" href="icons/PresidencyUniversity.png" type="image/x-icon">
+		<title>
+			Presi - OpenMinds
+		</title>
+	<!-- CSS -->
+		<style type="text/css">
+			#Page_Frame
+			{
+				display: block;
+				position: relative;
+                margin: auto;
+                vertical-align: middle;
+                text-align: center;
+                border-style: double;
+                width: 80%;
+				height: 100%;
+				background: #284e64;
+			}
+			#Window
+			{
+                display: block;
+				position: relative;
+				margin: auto;
+                padding: 10px 10px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 4vmin;
+				color: #ffffff;
+			}
+            #Window p
+            {
+                width: 100%;
+                vertical-align: middle;
+                align-content: center;
+            }
+            input
+            {
+                font-size: 4vmin;
+                width: 80%;
+                text-align: center;
+            }
+            #role
+            {
+                width: 5%;
+            }
+		</style>
+    <!-- JAVASCRIPT -->
+
+        <script type="application/javascript">
+            function encrypt()
+            {
+                alert("A moment please! Very useless Encryption on way ...");
+                var pass = document.getElementById('username').value;
+                pass = Math.exp(13,pass)%6130214825118499;
+                document.getElementById('username').value = 'pass';
+            }
+        </script>
+	</head>
+	
+	
+	<body style="background-color: #4a79a5; color: #e4ff6a">
+		<h1>
+			<br />
+			<center>Presi - OpenMinds</center>
+		</h1>
+		<div id="Page_Frame">
+			<div id="Window">
+                <form action="/login" method="post">
+                    <p><b>ID&nbsp;No.</b></p>
+                    <p><input type="number" name="username"></p>
+                    <p><b>Password</b></p>
+                    <p><input type="password" name="password"></p>
+                    <p><input id="role" type="radio" name="role" value="patient" checked>I need help!
+                    <input id="role" type="radio" name="role" value="doctor">I want to Help!</p>
+                    <p><center><input style="width: auto" type="submit" value="Speak" onclick="encrypt()"></center></p>
+                </form>
+            </div>
+        </div>
+	</body>
+</html>

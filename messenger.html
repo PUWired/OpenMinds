@@ -1,0 +1,50 @@
+<DOCTYPE html>
+
+<!--
+	# Message stylings
+	
+	<li id="left" style="color: aqua; text-align: left; float: left"></li><br>
+    <li id="right" style="color: chartreuse; text-align: right; float: right"></li><br>
+-->
+
+<html>
+	<style>
+	#sent
+	{
+		color: chartreuse;
+		text-align: right;
+		float: right;
+		list-style: none;
+	}
+	#messages
+	{
+		width: 60%;
+		margin: auto auto;
+		background: dimgrey;
+	}
+	#messagebox
+	{
+		
+	}
+	</style>
+    <link rel="icon" href="icons/MedicalHackers.png" type="image/x-icon">
+    <title>
+        Messenger
+    </title>
+    <body style="background: cadetblue">
+        <ul id="messages"></ul>
+        <center><input type='text' id='messagebox'></center>
+    </body>
+</html>
+
+<script type="application/javascript">
+   var ip=document.getElementById('messagebox');
+    ip.addEventListener('keypress', function(e){
+      if (e.keyCode == 13) {
+        document.getElementById('messages').innerHTML += '<li id="sent">' + ip.value + '</li><br>'
+        document.getElementById('messagebox').value=''
+        xmlhttp.open("GET","getuser.php?q="+str,true);
+		xmlhttp.send();
+      }
+    });
+</script>
